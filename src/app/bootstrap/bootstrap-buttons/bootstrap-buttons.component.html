@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="row flex-items-xs-middle">
+        <div class="col-md-12">
+            <h2 class="text-xs-right">Bootstrap Buttons</h2>
+        </div>
+    </div>
+    <hr>
+    <div class="row flex-items-xs-middle">
+        <div class="col-xs-12">
+            <h2>Sample</h2>
+            <h3>Checkbox</h3>
+            <p>
+                Check-box-like button group can be easily done with pure Angular 2, no custom directives necessary.
+                But we include demo here for completeness.
+            </p>
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary" [class.active]="checkboxModel.left">
+                    <input type="checkbox" [(ngModel)]="checkboxModel.left"> Left (pre-checked)
+                </label>
+                <label class="btn btn-primary" [class.active]="checkboxModel.middle">
+                    <input type="checkbox" [(ngModel)]="checkboxModel.middle"> Middle
+                </label>
+                <label class="btn btn-primary" [class.active]="checkboxModel.right">
+                    <input type="checkbox" [(ngModel)]="checkboxModel.right"> Right
+                </label>
+            </div>
+            <pre>{{checkboxModel | json}}</pre>
+            <hr>
+            <h3>Radio</h3>
+            <div [(ngModel)]="radioModel" ngbRadioGroup name="radioBasic">
+                <label class="btn btn-primary">
+                    <input type="radio" [value]="1"> Left (pre-checked)
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" value="middle"> Middle
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" [value]="false"> Right
+                </label>
+            </div>
+            <pre>{{radioModel}}</pre>
+        </div>
+        
+        
+        <div class="col-xs-12">
+            <hr>
+            <h2>Code</h2>
+            <ngb-accordion #acc="ngbAccordion">
+                <ngb-panel id="html" title="HTML">
+                    <template ngbPanelContent>
+                        <pre><code [innerHTML]="htmlCode | escapeHtml"></code></pre>
+                    </template>
+                </ngb-panel>
+                <ngb-panel id="ts" title="TS">
+                    <template ngbPanelContent>
+                        <pre [innerHTML]="tsCode | escapeHtml"></pre>
+                    </template>
+                </ngb-panel>
+            </ngb-accordion>
+            
+        </div>
+    </div>
+</div>

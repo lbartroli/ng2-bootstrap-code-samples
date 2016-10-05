@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row flex-items-xs-middle">
+        <div class="col-md-12">
+            <h2 class="text-xs-right">Bootstrap Modal</h2>
+        </div>
+    </div>
+    <hr>
+    <div class="row flex-items-xs-middle">
+        <div class="col-xs-12">
+            <h2>Sample</h2>
+            <button class="btn btn-primary" (click)="openModal(myModal)">Launch demo modal</button>
+            <h4>{{closeResult}}</h4>
+        </div>
+        
+        
+        <div class="col-xs-12">
+            <hr>
+            <h2>Code</h2>
+            <ngb-accordion #acc="ngbAccordion">
+                <ngb-panel id="html" title="HTML">
+                    <template ngbPanelContent>
+                        <pre><code [innerHTML]="htmlCode | escapeHtml"></code></pre>
+                    </template>
+                </ngb-panel>
+                <ngb-panel id="ts" title="TS">
+                    <template ngbPanelContent>
+                        <pre [innerHTML]="tsCode | escapeHtml"></pre>
+                    </template>
+                </ngb-panel>
+            </ngb-accordion>
+            
+        </div>
+    </div>
+</div>
+
+<!--TEMPLATE-->
+<template ngbModalContainer #myModal>
+    <div class="modal-header">
+        <button type="button" class="close" aria-label="Close" (click)="dismissModal('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+        <h4 class="modal-title">Modal title</h4>
+    </div>
+    <div class="modal-body">
+        <p>One fine body&hellip;</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="closeModal('accept')">Accept</button>
+        <button type="button" class="btn btn-secondary" (click)="closeModal('close')">Close</button>
+    </div>
+</template>

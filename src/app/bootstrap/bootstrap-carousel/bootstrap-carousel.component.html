@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row flex-items-xs-middle">
+        <div class="col-md-12">
+            <h2 class="text-xs-right">Bootstrap Carousel</h2>
+        </div>
+    </div>
+    <hr>
+    <div class="row flex-items-xs-middle">
+        <div class="col-xs-12">
+            <h2>Sample</h2>
+            <ngb-carousel>
+                <template ngbSlide>
+                    <img class="w100" src="../../../assets/images/carousel-1.jpeg" alt="Random first slide">
+                    <div class="carousel-caption">
+                        <h3>First slide label</h3>
+                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    </div>
+                </template>
+                <template ngbSlide>
+                    <img class="w100" src="../../../assets/images/carousel-2.jpeg" alt="Random second slide">
+                    <div class="carousel-caption">
+                        <h3>Second slide label</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </template>
+                <template ngbSlide>
+                    <img class="w100" src="../../../assets/images/carousel-3.jpeg" alt="Random third slide">
+                    <div class="carousel-caption">
+                        <h3>Third slide label</h3>
+                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                    </div>
+                </template>
+            </ngb-carousel>
+        </div>
+        
+        
+        <div class="col-xs-12">
+            <hr>
+            <h2>Code</h2>
+            <ngb-accordion #acc="ngbAccordion">
+                <ngb-panel id="html" title="HTML">
+                    <template ngbPanelContent>
+                        <pre><code [innerHTML]="htmlCode | escapeHtml"></code></pre>
+                    </template>
+                </ngb-panel>
+                <ngb-panel id="ts" title="TS">
+                    <template ngbPanelContent>
+                        <pre [innerHTML]="tsCode | escapeHtml"></pre>
+                    </template>
+                </ngb-panel>
+            </ngb-accordion>
+            
+        </div>
+    </div>
+</div>

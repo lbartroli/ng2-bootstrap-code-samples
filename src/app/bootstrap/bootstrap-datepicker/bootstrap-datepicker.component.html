@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row flex-items-xs-middle">
+        <div class="col-md-12">
+            <h2 class="text-xs-right">Bootstrap Datepicker</h2>
+        </div>
+    </div>
+    <hr>
+    <div class="row flex-items-xs-middle">
+        <div class="col-xs-12">
+            <h2>Sample</h2>
+            <h3>Basic</h3>
+            <div class="input-group">
+                <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" [maxDate]="maxDate" [minDate]="minDate" ngbDatepicker #dp="ngbDatepicker" readonly>
+                <span class="input-group-addon fa fa-calendar" (click)="dp.toggle()"></span>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-6">
+                    <h6>MinDate</h6>
+                    <div class="input-group">
+                        <input class="form-control" placeholder="yyyy-mm-dd" name="dpmin" [(ngModel)]="minDate" ngbDatepicker #dpmin="ngbDatepicker" readonly>
+                        <span class="input-group-addon fa fa-calendar" (click)="dpmin.toggle()"></span>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <h6>MaxDate</h6>
+                    <div class="input-group">
+                        <input class="form-control" placeholder="yyyy-mm-dd" name="dpmax" [(ngModel)]="maxDate" ngbDatepicker #dpmax="ngbDatepicker" readonly>
+                        <span class="input-group-addon fa fa-calendar" (click)="dpmax.toggle()"></span>
+                    </div>
+                </div>
+            </div>
+
+            <hr/>
+            <pre>Model: {{ model | json }}</pre>
+
+        </div>
+        
+        
+        <div class="col-xs-12">
+            <hr>
+            <h2>Code</h2>
+            <ngb-accordion #acc="ngbAccordion">
+                <ngb-panel id="html" title="HTML">
+                    <template ngbPanelContent>
+                        <pre><code [innerHTML]="htmlCode | escapeHtml"></code></pre>
+                    </template>
+                </ngb-panel>
+                <ngb-panel id="ts" title="TS">
+                    <template ngbPanelContent>
+                        <pre [innerHTML]="tsCode | escapeHtml"></pre>
+                    </template>
+                </ngb-panel>
+            </ngb-accordion>
+            
+        </div>
+    </div>
+</div>

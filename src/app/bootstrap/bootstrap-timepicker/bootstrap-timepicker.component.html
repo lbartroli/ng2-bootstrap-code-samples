@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="row flex-items-xs-middle">
+        <div class="col-md-12">
+            <h2 class="text-xs-right">Bootstrap Timepicker</h2>
+        </div>
+    </div>
+    <hr>
+    <div class="row flex-items-xs-middle">
+        <div class="col-xs-12">
+            <h2>Sample</h2>
+            <h3>Basic</h3>
+            <ngb-timepicker [(ngModel)]="time" [seconds]="true" [spinners]="true"></ngb-timepicker>
+            <hr>
+            <pre>Selected time: {{time | json}}</pre>
+
+            <hr>
+
+            <h3>Meridian</h3>
+            <ngb-timepicker [(ngModel)]="time" [meridian]="meridian"></ngb-timepicker>
+            <button class="btn btn-sm btn-outline-{{meridian ? 'success' : 'danger'}}" (click)="toggleMeridian()">
+                Meridian - {{meridian ? "ON" : "OFF"}}
+            </button>
+            <hr>
+            <pre>Selected time: {{time | json}}</pre>
+
+            <hr>
+
+            <h3>Steps</h3>
+            <ngb-timepicker [(ngModel)]="time" [seconds]="true" 
+                [hourStep]="hourStep" [minuteStep]="minuteStep" [secondStep]="secondStep"></ngb-timepicker>
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="changeHourStep">Hour Step</label>
+                    <input type="number" class="form-control form-control-sm" [(ngModel)]="hourStep" />
+                </div>    
+                <div class="col-sm-3">
+                    <label for="changeMinuteStep">Minute Step</label>
+                    <input type="number" class="form-control form-control-sm" [(ngModel)]="minuteStep" />
+                </div>
+                <div class="col-sm-3">
+                    <label for="changeSecondStep">Second Step</label>
+                    <input type="number" class="form-control form-control-sm" [(ngModel)]="secondStep" />
+                </div>
+            </div>
+            <hr>
+            <pre>Selected time: {{time | json}}</pre>
+        </div>
+        
+        
+        <div class="col-xs-12">
+            <hr>
+            <h2>Code</h2>
+            <ngb-accordion #acc="ngbAccordion">
+                <ngb-panel id="html" title="HTML">
+                    <template ngbPanelContent>
+                        <pre><code [innerHTML]="htmlCode | escapeHtml"></code></pre>
+                    </template>
+                </ngb-panel>
+                <ngb-panel id="ts" title="TS">
+                    <template ngbPanelContent>
+                        <pre [innerHTML]="tsCode | escapeHtml"></pre>
+                    </template>
+                </ngb-panel>
+            </ngb-accordion>
+            
+        </div>
+    </div>
+</div>

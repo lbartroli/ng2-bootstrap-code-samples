@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row flex-items-xs-middle">
+        <div class="col-md-12">
+            <h2 class="text-xs-right">Bootstrap Progressbar</h2>
+        </div>
+    </div>
+    <hr>
+    <div class="row flex-items-xs-middle">
+        <div class="col-xs-12">
+            <h2>Sample</h2>
+            <h3>Basic</h3>
+            <ngb-progressbar type="success" [value]="25"></ngb-progressbar>
+            <ngb-progressbar type="info" [value]="50"></ngb-progressbar>
+            <ngb-progressbar type="warning" [value]="75"></ngb-progressbar>
+            <ngb-progressbar type="danger" [value]="100"></ngb-progressbar>
+            <hr>
+            <h3>Striped</h3>
+            <ngb-progressbar type="success" [value]="25" [striped]="true"></ngb-progressbar>
+            <ngb-progressbar type="info" [value]="50" [striped]="true"></ngb-progressbar>
+            <ngb-progressbar type="warning" [value]="75" [striped]="true"></ngb-progressbar>
+            <ngb-progressbar type="danger" [value]="100" [striped]="true"></ngb-progressbar>
+            <hr>
+            <h3>Max[1000]</h3>
+            <ngb-progressbar type="success" [value]="25" [striped]="true" [max]="1000"></ngb-progressbar>
+            <ngb-progressbar type="info" [value]="50" [striped]="true" [max]="1000"></ngb-progressbar>
+            <ngb-progressbar type="warning" [value]="75" [striped]="true" [max]="1000"></ngb-progressbar>
+            <ngb-progressbar type="danger" [value]="100" [striped]="true" [max]="1000"></ngb-progressbar>
+        </div>
+        
+        
+        <div class="col-xs-12">
+            <hr>
+            <h2>Code</h2>
+            <ngb-accordion #acc="ngbAccordion">
+                <ngb-panel id="html" title="HTML">
+                    <template ngbPanelContent>
+                        <pre><code [innerHTML]="htmlCode | escapeHtml"></code></pre>
+                    </template>
+                </ngb-panel>
+                <ngb-panel id="ts" title="TS">
+                    <template ngbPanelContent>
+                        <pre [innerHTML]="tsCode | escapeHtml"></pre>
+                    </template>
+                </ngb-panel>
+            </ngb-accordion>
+            
+        </div>
+    </div>
+</div>

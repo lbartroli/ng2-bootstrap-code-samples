@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+$brand-primary: darken(#428bca, 6.5%) !default; // #337ab7
+$brand-success: #5cb85c !default;
+$brand-info: #5bc0de !default;
+$brand-warning: #f0ad4e !default;
+$brand-danger: #d9534f !default;
+// $border-radius: 0;
+$enable-flex: true;
+$breadcrumb-bg: transparent;
+$breadcrumb-padding-x: 0;
+$breadcrumb-padding-y: .25rem;
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+@import '../node_modules/font-awesome/css/font-awesome.css';

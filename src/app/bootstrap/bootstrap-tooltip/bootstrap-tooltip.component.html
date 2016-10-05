@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="row flex-items-xs-middle">
+        <div class="col-md-12">
+            <h2 class="text-xs-right">Bootstrap Tooltip</h2>
+        </div>
+    </div>
+    <hr>
+    <div class="row flex-items-xs-middle">
+        <div class="col-xs-12">
+            <h2>Sample</h2>
+            <h3>Basic</h3>
+            <button type="button" class="btn btn-secondary" placement="top" ngbTooltip="Tooltip on top">
+                Tooltip on top
+            </button>
+            <button type="button" class="btn btn-secondary" placement="right" ngbTooltip="Tooltip on right">
+                Tooltip on right
+            </button>
+            <button type="button" class="btn btn-secondary" placement="bottom" ngbTooltip="Tooltip on bottom">
+                Tooltip on bottom
+            </button>
+            <button type="button" class="btn btn-secondary" placement="left" ngbTooltip="Tooltip on left">
+                Tooltip on left
+            </button>
+
+            <hr>
+
+            <h3>Template content</h3>
+            <p>
+                Tooltips can contain any arbitrary HTML, Angular bindings and even directives!
+                Simply enclose desired content in a <code>&lt;template&gt;</code> element.
+            </p>
+
+            <template #tipContent>Hello, <b>{{name}}</b>!</template>
+            <button type="button" class="btn btn-secondary" [ngbTooltip]="tipContent">
+                I've got markup and bindings in my tooltip!
+            </button>
+
+            <hr>
+
+            <h3>Triggers</h3>
+            <p>
+                You can easily override open and close triggers by specifying event names (separated by <code>:</code>) in the <code>triggers</code> property.
+            </p>
+
+            <button type="button" class="btn btn-secondary" ngbTooltip="You see, I show up on click!" triggers="click:blur">
+                Click me!
+            </button>
+
+            <p>
+                Alternatively you can take full manual control over tooltip opening / closing events.
+            </p>
+
+            <button type="button" class="btn btn-secondary" ngbTooltip="What a great tip!" triggers="manual" #t="ngbTooltip" (click)="t.open()">
+                Click me to open a tooltip
+            </button>
+            <button type="button" class="btn btn-secondary" (click)="t.close()">
+                Click me to close a tooltip
+            </button>
+        </div>
+        
+        
+        <div class="col-xs-12">
+            <hr>
+            <h2>Code</h2>
+            <ngb-accordion #acc="ngbAccordion">
+                <ngb-panel id="html" title="HTML">
+                    <template ngbPanelContent>
+                        <pre><code [innerHTML]="htmlCode | escapeHtml"></code></pre>
+                    </template>
+                </ngb-panel>
+                <ngb-panel id="ts" title="TS">
+                    <template ngbPanelContent>
+                        <pre [innerHTML]="tsCode | escapeHtml"></pre>
+                    </template>
+                </ngb-panel>
+            </ngb-accordion>
+            
+        </div>
+    </div>
+</div>
